@@ -1,0 +1,26 @@
+.home {
+    position: fixed;
+    top:10%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 100vw;
+    height: 100vh;
+    border-radius: 20% 12% 40% 80%;  
+    filter: blur(100px);
+    background: linear-gradient(rgb(255, 0, 55), rgba(120, 60, 133, 0.836), rgba(37, 8, 206, 0.849));
+    opacity: 0.22;
+    z-index:-1;
+}
+
+.container {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+#get-started-button {
+    background-image:linear-gradient(rgba(255, 166, 0, 0.616),rgba(128, 36, 0, 0.664));
+}
+
+#available-tournaments {
+    background-image: linear-gradient(rgba(212, 0, 255, 0.616),rgba(23, 78, 70, 0.616));
+}
