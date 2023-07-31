@@ -10,18 +10,35 @@
 .NavBar ul {
     list-style: none;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
-    align-items: flex-end;
 }
   
 .NavBar li {
     padding:1em;
 }
+
   
-.NavBar a {
+.rest {
     color: white;
+}
+
+.site-title {
+    color:rgb(135, 162, 204);
+    font-size:1.5rem;
 }
   
 .NavBar a:hover {
     color: beige;
+}
+
+.sign-in {
+    color:orange;
+}
+
+.active{
+    background:rgba(61, 161, 136, 0.473);
+    border-radius:50px;
+    padding:5px;
 }
