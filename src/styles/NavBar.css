@@ -1,0 +1,27 @@
+.NavBar {
+    display:flex;
+    width: 100%;
+    background-color: #333;
+    color:white;
+    justify-content: space-between;
+}
+  
+  
+.NavBar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+  
+.NavBar li {
+    padding:1em;
+}
+  
+.NavBar a {
+    color: white;
+}
+  
+.NavBar a:hover {
+    color: beige;
+}
