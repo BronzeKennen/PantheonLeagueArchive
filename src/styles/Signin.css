@@ -28,7 +28,7 @@
 
 .instructions {
     background:black;
-    width:85%;
+    width:80%;
     border-radius: 10px;
 }
 
@@ -49,7 +49,7 @@
     border-radius:20px;
     border:1px purple solid;
     width:25%;
-    background-color: rgba(99, 150, 226, 0.315);
+    background-color: rgba(40, 41, 44, 0.715);
     padding:.8em;
 }
 
@@ -59,7 +59,7 @@
 }
 
 .lmao {
-    width:90%;
+    width:80%;
     display:flex;
     flex-direction: column;
     align-items: flex-start;
@@ -70,4 +70,25 @@
     width:100%;
     height:2rem;
     border-radius:6px;
+}
+
+.lmao a {
+    color:rgb(153, 230, 90);
+}
+.submit {
+    width:78%;
+    margin-top:9%;
+}
+
+@media (max-width:480px) {
+ .signin {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding:0.5em;
+}   
+.register {
+    padding:1em;
+    width:90%;    
+ }
 }

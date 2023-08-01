@@ -56,7 +56,7 @@ export default function SignIn() {
     setSuccess(true);
   }
   
-  return (
+  return (  
     <>
     {success ? (
       <section>
@@ -119,7 +119,15 @@ export default function SignIn() {
           <FontAwesomeIcon icon={faInfoCircle}/> 8 to 32 characters. Must contain uppercase and lowercase letters, numbers and symbols.
         </p>
         </div>
-        <button disabled={!validName || !validPass ? true : false}>Sign up</button>
+        <motion.button disabled={!validName || !validPass ? true : false} className="submit"
+        whileHover={{
+          scale: 1.05,
+          boxShadow: "0px 0px 2px 2px cyan"
+        }}>Sign up</motion.button>
+        <div className="lmao">
+        <span>Already a member? <a href="/signin">Sign in</a></span>
+        <span><a href="/forgot">Forgot Password?</a></span>
+        </div>
       </form>
     </section>
       </>)}
