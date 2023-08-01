@@ -18,9 +18,41 @@
 
 
 #get-started-button {
+    opacity:0;
     background-image:linear-gradient(rgba(255, 166, 0, 0.616),rgba(128, 36, 0, 0.664));
 }
 
 #available-tournaments {
+    opacity:0;
     background-image: linear-gradient(rgba(212, 0, 255, 0.616),rgba(23, 78, 70, 0.616));
+}
+
+.header {
+    opacity:0%;
+}
+
+.header-button {
+    margin-top:14%;
+}
+
+@media (max-width: 480px) {
+    .container {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .header {
+        opacity:0%;
+        margin-top:-55%;
+    }
+
+    .header-button {
+        margin-top:0%;
+        width:70%;
+    }
+    .container span {
+        margin-top:70%;
+        padding:2%;
+    }
 }
