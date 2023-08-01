@@ -7,7 +7,7 @@
     height: 100vh;
     border-radius: 20% 12% 40% 80%;  
     filter: blur(100px);
-    background: radial-gradient(farthest-side at 60% 55%,rgb(4, 0, 255), rgba(255, 0, 0, 0.836), rgba(0, 217, 255, 0.849), rgba(255, 0, 191, 0.849));
+    background: radial-gradient(farthest-side at 60% 55%,rgb(51, 50, 156), rgba(255, 0, 0, 0.836), rgba(0, 217, 255, 0.849), rgba(255, 0, 191, 0.849));
     background-size: 300% 300%;
     animation: bg-animation 40s infinite;
     opacity: 0.22;
@@ -26,7 +26,14 @@
     }
 }
 
+.instructions {
+    background:black;
+    width:85%;
+    border-radius: 10px;
+}
+
 .signin {
+    font-family: 'Montserrat', sans-serif;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -36,8 +43,31 @@
 }
 
 .register {
-    border-radius:50px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius:20px;
     border:1px purple solid;
     width:25%;
-    background-color: grey;
+    background-color: rgba(99, 150, 226, 0.315);
+    padding:.8em;
+}
+
+
+.hide {
+    display:none;
+}
+
+.lmao {
+    width:90%;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding:.5em;
+}
+
+.lmao input {
+    width:100%;
+    height:2rem;
+    border-radius:6px;
 }
