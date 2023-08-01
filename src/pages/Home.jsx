@@ -33,7 +33,7 @@ export default function Home() {
           opacity: 1
         }}
         transition={{opacity: {duration:1, delay:1}}}
-        >Available tournaments</motion.button>
+        >Browse tournaments</motion.button>
         </span>
       </div>
     </>
