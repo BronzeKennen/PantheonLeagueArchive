@@ -13,6 +13,9 @@ export default function Home() {
         }}
         transition={{duration:1}}
         >All Greek Rocket League Tournaments in one place</motion.h1>
+        <div className="rllogo">
+          <div className="glow"></div>
+        </div>
         <span>
         <motion.button className="header-button" id="get-started-button"
         whileHover={{

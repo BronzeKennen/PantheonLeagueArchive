@@ -18,7 +18,7 @@
     flex-direction: column;
     align-items: flex-start;
     background-color: rgb(73, 75, 75);
-    border-radius:13px;
+    border-radius:5px;
     padding:.2rem 1.2rem;
     box-shadow:  0 0 7px #e60073, 0 0 6px #e60073, 0 0 15px #006eec, 0 0 2px #e60073, 0 0 1px #e60073;
 }
@@ -27,3 +27,4 @@
     width:100%;
     margin:1em 0;
 }
+

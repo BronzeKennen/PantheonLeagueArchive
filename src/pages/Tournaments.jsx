@@ -3,7 +3,9 @@ import "../styles/Tournaments.css"
 export default function Tournaments() {
   return (
     <>
-    <h1 id="tour-title">Tournaments</h1>
+    <div className="tour-tab">
+      <h1 id="tour-title">Tournaments</h1>
+    </div>
     <div className="tournament-container">
       <TourComponent/>
     </div>
