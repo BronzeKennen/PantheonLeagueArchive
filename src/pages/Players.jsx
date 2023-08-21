@@ -3,9 +3,13 @@ import { createClient } from '@supabase/supabase-js'
 
 const supabase = createClient('https://cwxskbsjnovkyqeloumw.supabase.co', import.meta.env.VITE_SUPABASE_API_KEY)
 
-let { data: teams, error } = await supabase
+let { data: players, error } = await supabase
+  .from('players')
+  .select('*')
+
+let { data: teams } = await supabase
   .from('teams')
-  .select('name')
+  .select('*')
 
 export default function Tournaments() {
   return (
@@ -14,16 +18,21 @@ export default function Tournaments() {
       <h1 id="tour-title">Players</h1>
     </div>
     <div className="tournament-container">
-      <TeamComponent/>
+      {players.map(player => {
+        return(<PlayerComponent player={player} key={player}/>)
+      })}
     </div>
     </>
   )
 }
 
-function TeamComponent() {
+function PlayerComponent(player) {
   return(
     <div className="tour-component">
-      <h2>Player Name</h2>
+      <div className="name-team">
+        <h1>{player.player.name}</h1>
+        <h2>{player.player.team}</h2>
+      </div>
       <span>stat1</span>
       <span>Team</span>
       <button>idk</button>
