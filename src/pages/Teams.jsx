@@ -1,4 +1,4 @@
-import "../styles/Tournaments.css"
+import "../styles/Teams.css"
 
 export default function Tournaments() {
   return (
@@ -7,19 +7,19 @@ export default function Tournaments() {
       <h1 id="tour-title">Tournaments</h1>
     </div>
     <div className="tournament-container">
-      <TourComponent/>
+      <TeamComponent/>
     </div>
     </>
   )
 }
 
-function TourComponent() {
+function TeamComponent() {
   return(
     <div className="tour-component">
-      <h2>Tournament Name</h2>
-      <span>Num of participants</span>
-      <span>Date</span>
-      <button>VIEW</button>
+      <h2>Team Name</h2>
+      <span>Team Members</span>
+      <span>Logo or smth idk</span>
+      <button>More Info</button>
     </div>
   )
 }

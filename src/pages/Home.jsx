@@ -12,7 +12,8 @@ export default function Home() {
           y:260
         }}
         transition={{duration:1}}
-        >All Greek Rocket League Tournaments in one place</motion.h1>
+        >Pantheon League Archive
+        </motion.h1>
         <div className="rllogo">
           <div className="glow"></div>
         </div>
@@ -38,6 +39,13 @@ export default function Home() {
         transition={{opacity: {duration:1, delay:1}}}
         >Browse tournaments</motion.button>
         </span>
+        <motion.h6
+        animate={{
+          opacity: 1
+        }}
+        transition={{opacity: {duration:1, delay:1.75}}}
+        id="h6lmao"
+        >All info regarding the Pantheon League season and its playoffs</motion.h6>
       </div>
     </>
   )

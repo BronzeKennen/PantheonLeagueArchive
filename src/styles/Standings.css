@@ -1,0 +1,26 @@
+.team-standings-component {
+    font-family: 'Montserrat', sans-serif;
+    margin:5rem;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(73, 75, 75);
+    border-radius:5px;
+    padding:.2rem 1.2rem;
+    box-shadow:  0 0 7px #e60073, 0 0 6px #e60073, 0 0 15px #006eec, 0 0 2px #e60073, 0 0 1px #e60073;
+}
+
+.team-standings-component h3 {
+    display:flex;
+    margin:.1rem 0;
+}
+
+.team-stats {
+    list-style: none;
+}
+.team-stats li {
+    border:1px blue solid;
+    border-radius: 10px;
+    padding:1rem;
+    margin:.2rem;
+    width:40%;
+}

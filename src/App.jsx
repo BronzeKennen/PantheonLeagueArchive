@@ -1,8 +1,9 @@
 import './App.css'
 import SignIn from './pages/SignIn';
-import Tournaments from './pages/Tournaments';
+import Standings from './pages/Standings';
 import Home from './pages/Home';
 import NavBar from './pages/NavBar'
+import Teams from './pages/Teams'
 
 function App() {
 
@@ -11,8 +12,11 @@ function App() {
     case '/Home':
       Component = Home;
       break;
-    case '/Tournaments':
-      Component = Tournaments;
+    case '/Standings':
+      Component = Standings;
+      break;
+    case '/Teams':
+      Component = Teams;
       break;
     case '/signin': 
       Component = SignIn;

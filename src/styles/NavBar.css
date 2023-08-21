@@ -5,7 +5,7 @@
     color:white;
     justify-content: space-between;
 }
-  
+
   
 .NavBar ul {
     list-style: none;
@@ -14,7 +14,7 @@
     align-items: center;
     flex-direction: row;
 }
-  
+
 .NavBar li {
     padding: 0 1em;
 }
@@ -23,15 +23,11 @@
 .rest {
     color: white;
 }
-
-.site-title {
-    color:rgb(176, 191, 216);
-    font-size:1.5rem;
-}
   
 .NavBar a:hover {
     color: beige;
 }
+
 
 .sign-in {
     color:orange;
@@ -41,4 +37,14 @@
     border-radius:12%;
     padding:3px;
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 20px #e60073, 0 0 10px #e60073;
+}
+
+.site-title {
+    display:flex;
+    width:1%;
+    background-size: 100%;
+}
+
+.site-title img {
+    width:45px;
 }
