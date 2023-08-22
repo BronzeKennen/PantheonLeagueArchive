@@ -1,7 +1,7 @@
 .NavBar {
     display:flex;
     width: 100%;
-    background: rgba(30, 13, 61, 0.2);
+    background: rgba(0, 0, 0, 0.6);
     color:white;
     justify-content: space-between;
 }
@@ -47,4 +47,19 @@
 
 .site-title img {
     width:45px;
+}
+
+@media(max-width:480px) {
+    .NavBar ul {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .NavBar {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
