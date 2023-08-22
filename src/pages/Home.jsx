@@ -1,52 +1,50 @@
 import "../styles/Home.css"
 import { motion } from 'framer-motion'
+import { createClient } from "@supabase/supabase-js"
+const supabase = createClient('https://cwxskbsjnovkyqeloumw.supabase.co', import.meta.env.VITE_SUPABASE_API_KEY)
+
+
+let { data: logos, error } = await supabase
+  .from('teams')
+  .select('logo')
+const path = window.location.pathname;
 
 export default function Home() {
   return (
     <>
       <div className="home"/>
-      <div className="container">
+      <div className="home-container">
         <motion.h1 className="header"
         animate={{
           opacity: 1,
-          y:260
         }}
-        transition={{duration:1}}
+        transition={{duration:.75}}
         >Pantheon League Archive
         </motion.h1>
         <div className="rllogo">
           <div className="glow"></div>
         </div>
-        <span>
-        <motion.button className="header-button" id="get-started-button"
-        whileHover={{
-          scale: 1.05,
-          boxShadow: '0px 0px 1px 1px orange'
-        }}
-        animate={{
-          opacity: 1
-        }}
-        transition={{opacity: {duration:1, delay:1}}}
-        >Get started</motion.button>
-        <motion.button className="header-button" id="available-tournaments"
-        whileHover={{
-          scale: 1.05,
-          boxShadow: '1px 1px 3px 3px purple'
-        }}
-        animate={{
-          opacity: 1
-        }}
-        transition={{opacity: {duration:1, delay:1}}}
-        >Browse tournaments</motion.button>
+        <span className="subheader">
+          <span className="logos">
+            {logos.map((logo) => {
+              return(<img src={logo.logo} className="header-logos"></img>)
+            })}
+          </span>
         </span>
         <motion.h6
         animate={{
           opacity: 1
         }}
-        transition={{opacity: {duration:1, delay:1.75}}}
+        transition={{opacity: {duration:1, delay:1.25}}}
         id="h6lmao"
         >All info regarding the Pantheon League season and its playoffs</motion.h6>
       </div>
+      <ul className="menu">
+        <li><a href="./Standings" className={path === '/Standings' ? 'active rest' : 'rest'}>Standings</a></li>
+        <li><a href="./Players" className={path === '/Players' ? 'active rest' : 'rest'}>Players</a></li>
+        <li><a href="./Playoffs" className={path === '/Playoffs' ? 'active rest' : 'rest'}>Playoffs</a></li>
+        <li><a href="./Matches" className={path === '/Matches' ? 'active rest' : 'rest'}>Matches</a></li>
+      </ul>
     </>
   )
 }

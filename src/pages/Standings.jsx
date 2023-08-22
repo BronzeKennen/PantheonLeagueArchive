@@ -38,11 +38,11 @@ function TeamStanding(props) {
                     <p>{team.wins} - {team.losses}</p>
                 </span>
             </span>
-                <span className="team-players">
-                    <h3>{team.player1}</h3>
-                    <h3>{team.player2}</h3>
-                    <h3>{team.player3}</h3>
-                </span>
+            <span className="team-players">
+                <h3>{team.player1}</h3>
+                <h3>{team.player2}</h3>
+                <h3>{team.player3}</h3>
+            </span>
         </motion.div>
     )
 }
