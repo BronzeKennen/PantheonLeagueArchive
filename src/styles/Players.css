@@ -32,6 +32,10 @@
     cursor: pointer;
 }
 
+.player-fadein-stats {
+    opacity:0%;
+}
+
 .tournament-container td {
     width:10%;
     padding:.4rem 0;

@@ -36,6 +36,7 @@
     flex-direction: row;
 }
 
+
 .team-players h3 {
     width:33%;
     margin:1.5rem;
@@ -46,5 +47,12 @@
     color:white;
 }
 
-/* @media (max-width:480px) {
-} */
+.player-hover-window {
+    position:absolute;
+    border:1px red solid;
+    background:grey;
+    border-radius: 5px;
+    padding:1rem;
+    width:30%;
+    height:30%;
+}
