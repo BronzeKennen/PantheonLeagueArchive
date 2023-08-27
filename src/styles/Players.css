@@ -9,6 +9,12 @@
     color:rgb(203, 184, 139);
 } 
 
+@media(max-width : 720px) {
+    .tournament-container {
+        overflow:scroll;
+    }
+}
+
 .tournament-container {
     font-family: 'Montserrat', sans-serif;
     padding:1em;
@@ -22,6 +28,9 @@
     width:80%;
 }
 
+.sort-header {
+    cursor: pointer;
+}
 
 .tournament-container td {
     width:10%;
