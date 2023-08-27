@@ -18,7 +18,7 @@ let { data: teams } = await supabase
 export default function Leaderboard() {
 
   const [sort,setSort] = useState(['none', 'asc']);
-  const options = ['player-name','team','goals','assists','saves','shots','shotp','mvp']
+  const options = ['Player Name','Team','Goals','Assists','Saves','Shots','Shot %','MVPs']
   return (
     <>
     <div className="tour-tab">
@@ -37,94 +37,16 @@ export default function Leaderboard() {
     </colgroup>
     <tbody>
       <tr>
-        <motion.th
-        whileHover={{
-          scale: 1.05,
-          textShadow: "0px 0px 2px 2px cyan"
-        }}
-        className="sort-header" onClick={() => {
-          (sort[0] === 'player-name' && sort[1] === 'desc' ? setSort(['player-name', 'asc']) : setSort(['player-name', 'desc']))
-        }}> 
-          {(sort[0] === 'player-name') ? (sort[1] === 'desc' ? <FontAwesomeIcon icon={faArrowUp} beat/> : <FontAwesomeIcon icon={faArrowDown}beat />) : <></>} 
-           Player Name
-        </motion.th>
-
-        <motion.th
-        whileHover={{
-          scale: 1.05,
-          textShadow: "0px 0px 2px 2px cyan"
-        }}
-        className="sort-header" onClick={() => {
-          (sort[0] === 'team' && sort[1] === 'desc' ? setSort(['team', 'asc']) : setSort(['team', 'desc']))
-        }}>
-          {(sort[0] === 'team') ? (sort[1] === 'desc' ? <FontAwesomeIcon icon={faArrowUp} beat/> : <FontAwesomeIcon icon={faArrowDown}beat />) : <></>} 
-           Team
-        </motion.th>
-
-        <motion.th
-        whileHover={{
-          scale: 1.05,
-          textShadow: "0px 0px 2px 2px cyan"
-        }}
-        className="sort-header" onClick={() => {
-          (sort[0] === 'goals' && sort[1] === 'desc' ? setSort(['goals', 'asc']) : setSort(['goals', 'desc']))          
-        }}> 
-        {(sort[0] === 'goals') ? (sort[1] === 'desc' ? <FontAwesomeIcon icon={faArrowUp} beat/> : <FontAwesomeIcon icon={faArrowDown}beat />) : <></>} 
-        Goals
-        </motion.th>
-
-        <motion.th
-        whileHover={{
-          scale: 1.05,
-          textShadow: "0px 0px 2px 2px cyan"
-        }}
-        className="sort-header" onClick={() => {
-          (sort[0] === 'assists' && sort[1] === 'desc' ? setSort(['assists', 'asc']) : setSort(['assists', 'desc']))          
-        }}> 
-        {(sort[0] === 'assists') ? (sort[1] === 'desc' ? <FontAwesomeIcon icon={faArrowUp} beat/> : <FontAwesomeIcon icon={faArrowDown}beat />) : <></>} 
-        Assists
-        </motion.th>
-        <motion.th
-        whileHover={{
-          scale: 1.05,
-          textShadow: "0px 0px 2px 2px cyan"
-        }}
-        className="sort-header" onClick={() => {
-          (sort[0] === 'saves' && sort[1] === 'desc' ? setSort(['saves', 'asc']) : setSort(['saves', 'desc']))          
-        }}> 
-        {(sort[0] === 'saves') ? (sort[1] === 'desc' ? <FontAwesomeIcon icon={faArrowUp} beat/> : <FontAwesomeIcon icon={faArrowDown}beat />) : <></>} 
-        Saves
-        </motion.th>
-        <motion.th
-        whileHover={{
-          scale: 1.05,
-          textShadow: "0px 0px 2px 2px cyan"
-        }}
-        className="sort-header" onClick={() => {
-          (sort[0] === 'shots' && sort[1] === 'desc' ? setSort(['shots', 'asc']) : setSort(['shots', 'desc']))
-        }}> 
-        {(sort[0] === 'shots') ? (sort[1] === 'desc' ? <FontAwesomeIcon icon={faArrowUp} beat/> : <FontAwesomeIcon icon={faArrowDown}beat />) : <></>} 
-        Shots</motion.th>
-        <motion.th
-        whileHover={{
-          scale: 1.05,
-          textShadow: "0px 0px 2px 2px cyan"
-        }}
-        className="sort-header" onClick={() => {
-          (sort[0] === 'shotp' && sort[1] === 'desc' ? setSort(['shotp', 'asc']) : setSort(['shotp', 'desc']))
-        }}>  
-        {(sort[0] === 'shotp') ? (sort[1] === 'desc' ? <FontAwesomeIcon icon={faArrowUp} beat/> : <FontAwesomeIcon icon={faArrowDown}beat />) : <></>} 
-        Shot %</motion.th>
-        <motion.th
-        whileHover={{
-          scale: 1.05,
-          textShadow: "0px 0px 2px 2px cyan"
-        }}
-        className="sort-header" onClick={() => {
-          (sort[0] === 'mvp' && sort[1] === 'desc' ? setSort(['mvp', 'asc']) : setSort(['mvp', 'desc']))
-        }}> 
-        {(sort[0] === 'mvp') ? (sort[1] === 'desc' ? <FontAwesomeIcon icon={faArrowUp} beat/> : <FontAwesomeIcon icon={faArrowDown}beat />) : <></>} 
-        MVP</motion.th>
+      {options.map((option) => {
+        return(
+          <motion.th className="sort-header" onClick={() => {
+            (sort[0] === option && sort[1] === 'desc' ? setSort([option, 'asc']) : setSort([option,'desc']))
+          }}>
+          {(sort[0] === option) ? (sort[1] === 'desc' ? <FontAwesomeIcon icon={faArrowUp} beat/> : <FontAwesomeIcon icon={faArrowDown}beat />) : <></>}
+          {option}
+          </motion.th>
+        )
+      })}
       </tr>
           {players.map(player => {
             return <PlayerComponent player={player} key={player.name} />;
