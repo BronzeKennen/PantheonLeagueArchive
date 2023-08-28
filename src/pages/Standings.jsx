@@ -53,9 +53,34 @@ function TeamStanding(props) {
                 </span>
             </span>
             <span className="team-players">
-                <h3><span onMouseMove={handleMouseMove} onMouseOver={() => setHoveredPlayer(team.player1)} onMouseOut={() => setHoveredPlayer(null)}>{team.player1}</span></h3>
-                <h3><span onMouseMove={handleMouseMove} onMouseOver={() => setHoveredPlayer(team.player2)} onMouseOut={() => setHoveredPlayer(null)}>{team.player2}</span></h3>
-                <h3><span onMouseMove={handleMouseMove} onMouseOver={() => setHoveredPlayer(team.player3)} onMouseOut={() => setHoveredPlayer(null)}>{team.player3}</span></h3>
+                <h3>
+                <motion.span
+                    whileHover={{
+                        color: 'orange'
+                    }}
+                    transition={{type: 'spring', stiffness: 300}}
+                    onMouseMove={handleMouseMove}
+                    onMouseOver={() => setHoveredPlayer(team.player1)}
+                    onMouseOut={() => setHoveredPlayer(null)}>{team.player1}
+                </motion.span></h3>
+                <h3><motion.span
+                    whileHover={{
+                        color: 'orange'
+                    }}
+                    transition={{type: 'spring', stiffness: 300}}
+                    onMouseMove={handleMouseMove}
+                    onMouseOver={() => setHoveredPlayer(team.player2)}
+                    onMouseOut={() => setHoveredPlayer(null)}>{team.player2}
+                </motion.span></h3>
+                <h3><motion.span
+                    whileHover={{
+                        color: 'orange'
+                    }}
+                    transition={{type: 'spring', stiffness: 300}}
+                    onMouseMove={handleMouseMove}
+                    onMouseOver={() => setHoveredPlayer(team.player3)}
+                    onMouseOut={() => setHoveredPlayer(null)}>{team.player3}
+                </motion.span></h3>
             </span>
             {hoveredPlayer && players.map((player) => {if(player.name === hoveredPlayer) return(<PlayerHover key={player.name} player={player} x={mousePosition.x} y={mousePosition.y}/>)}) }
         </motion.div>
