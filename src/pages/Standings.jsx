@@ -26,8 +26,14 @@ export default function Standings() {
 }
 
 function TeamStanding(props) {
-    const [hoveredPlayer, setHoveredPlayer] = useState(false);
 
+    const [hoveredPlayer, setHoveredPlayer] = useState(null);
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0});
+
+    const handleMouseMove = (e) => {
+        const { clientX, clientY } = e;
+        setMousePosition({x: clientX, y:clientY});
+    };
     const {team, index} = props;
     return(
         <motion.div className="team-stand"
@@ -47,21 +53,43 @@ function TeamStanding(props) {
                 </span>
             </span>
             <span className="team-players">
-                <h3><span onMouseOver={() => setHoveredPlayer(true)} onMouseOut={() => setHoveredPlayer(false)}>{team.player1}</span></h3>
-                <h3><span onMouseOver={() => setHoveredPlayer(true)} onMouseOut={() => setHoveredPlayer(false)}>{team.player2}</span></h3>
-                <h3><span onMouseOver={() => setHoveredPlayer(true)} onMouseOut={() => setHoveredPlayer(false)}>{team.player3}</span></h3>
+                <h3><span onMouseMove={handleMouseMove} onMouseOver={() => setHoveredPlayer(team.player1)} onMouseOut={() => setHoveredPlayer(null)}>{team.player1}</span></h3>
+                <h3><span onMouseMove={handleMouseMove} onMouseOver={() => setHoveredPlayer(team.player2)} onMouseOut={() => setHoveredPlayer(null)}>{team.player2}</span></h3>
+                <h3><span onMouseMove={handleMouseMove} onMouseOver={() => setHoveredPlayer(team.player3)} onMouseOut={() => setHoveredPlayer(null)}>{team.player3}</span></h3>
             </span>
-            {hoveredPlayer && <PlayerHover player={'test'}/>}
+            {hoveredPlayer && players.map((player) => {if(player.name === hoveredPlayer) return(<PlayerHover key={player.name} player={player} x={mousePosition.x} y={mousePosition.y}/>)}) }
         </motion.div>
     )
 }
 
+
 function PlayerHover(props) {
-    const {player} = props;
-    console.log("???");
+    const {player,x,y} = props;
+    const style = {
+        position:'absolute',
+        left: (-x/1.5 + (75 * window.innerWidth / 100)),
+        top:  y+50,
+    }
     return(
-        <div className="player-hover-window">
-            <h3>I am trying to put some teams on hover or whatever the fuck</h3>
-        </div>
+        <motion.div
+        animate={{
+            opacity: 1
+        }}
+        transition={{opacity: {duration:.4}}}        
+        className="player-hover-window" style={style}>
+            <span>Team: {player.team} </span>
+            <span>Name: {player.name}</span>
+            <div className="lines">
+            <div className="line">
+                <span>Goals: {player.goals}</span>
+                <span>Assists: {player.assists}</span>
+                <span>Saves: {player.saves}</span>
+            </div>
+            <div className="line">
+                <span>Shot %: {player.shooting_percentage}</span>
+                <span>MVP: {player.mvp}</span>
+            </div>
+            </div>
+        </motion.div>
     )
 }

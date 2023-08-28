@@ -48,11 +48,31 @@
 }
 
 .player-hover-window {
-    position:absolute;
-    border:1px red solid;
-    background:grey;
+    box-shadow:  0 0 7px #e60000, 0 0 6px #e60073, 0 0 15px #ecb500, 0 0 2px #e60073, 0 0 1px #e60073;
+    background-image: radial-gradient(rgba(221, 26, 26, 0.559),rgba(96, 26, 26, 0.4),rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0.0));
+    background-size:100%;
+    background-repeat: no-repeat;
     border-radius: 5px;
     padding:1rem;
-    width:30%;
-    height:30%;
+    width:25%;
+    height:40%;
+    opacity:0%;
+}
+
+.lines {
+    display:flex;
+    flex-direction: row;
+}
+
+.line {
+    width:50%;
+    display:flex;
+    flex-direction: column;
+}
+
+.player-hover-window span {
+    display:flex;
+    flex-direction: row;
+    padding:1rem;
+    width:50%;
 }
