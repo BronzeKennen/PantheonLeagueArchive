@@ -1,0 +1,38 @@
+.match-bg {
+    background:rgba(34, 28, 28, 0.612);
+    padding:.5rem 2rem;
+    margin:7%;
+}
+
+.general-stats {
+    display:flex;
+    flex-direction: row;
+}
+
+.general-stats h2 {
+    margin:0 2rem;
+}
+
+.match-info {
+    width:100%;
+}
+
+.teams-presentation {
+    display:flex;
+    flex-direction: row;
+}
+
+.teams-presentation td {
+    display:flex;
+    flex-direction: column;
+    width:50%;
+    border:1px red solid;
+}
+
+.team1{
+    align-items: flex-start;
+}
+
+.team2 {
+    align-items: flex-end;
+}
