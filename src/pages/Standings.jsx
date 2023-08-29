@@ -45,11 +45,8 @@ function TeamStanding(props) {
             <span className="team-stuff">
                 <h3>{team.name}</h3>
                 <img className="team-logo" src={team.logo}></img>
-            </span>
-            <span className="team-rest">
-                <span>
-                    <p>Series Score</p>
-                    <p>{team.wins} - {team.losses}</p>
+                <span className="team-rest">
+                    <span>{team.wins} - {team.losses}</span>
                 </span>
             </span>
             <span className="team-players">

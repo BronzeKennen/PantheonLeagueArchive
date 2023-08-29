@@ -26,10 +26,6 @@
     max-height: 50px;
 }
 
-.team-rest {
-    margin:0 2rem;
-}
-
 .team-players {
     min-width:30%;
     display:flex;
@@ -48,7 +44,7 @@
 }
 
 .player-hover-window {
-    box-shadow:  0 0 7px #e60000, 0 0 6px #e60073, 0 0 15px #ecb500, 0 0 2px #e60073, 0 0 1px #e60073;
+    /* box-shadow:  0 0 7px #e60000, 0 0 6px #e60073, 0 0 15px #ecb500, 0 0 2px #e60073, 0 0 1px #e60073; */
     background-image: radial-gradient(rgba(221, 26, 26, 0.559),rgba(96, 26, 26, 0.4),rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0.0));
     background-size:100%;
     background-repeat: no-repeat;
@@ -75,4 +71,40 @@
     flex-direction: row;
     padding:1rem;
     width:50%;
+}
+
+
+@media (max-width:720px) {
+    .team-stand {
+        margin:1rem;
+    }
+
+    .team-stuff {
+        margin:0 15%;
+        width:80%;
+    }
+    .team-logo {
+        max-width:100px;
+        max-height:100px;
+        margin:0 auto;
+    }
+    .team-rest {
+        font-size:1.5rem;
+        padding:.4rem;
+    }
+
+    .team-players {
+        width:50%;
+        flex-direction: column;
+    }
+    
+}
+
+@media (max-width:1200px) {
+    .player-hover-window {
+        visibility: hidden;
+    }
+    .team-stuff {
+        margin:0 2rem;
+    }
 }

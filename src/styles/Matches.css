@@ -1,3 +1,8 @@
+
+.matches-grid {
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+}
 .match-bg {
     background:rgba(34, 28, 28, 0.612);
     padding:.5rem 2rem;
@@ -5,8 +10,8 @@
 }
 
 .general-stats {
-    display:flex;
-    flex-direction: row;
+    display:grid;
+    grid-template-columns:1fr .2fr 1fr;
 }
 
 .general-stats h2 {
@@ -23,16 +28,48 @@
 }
 
 .teams-presentation td {
+    /* border:1px red solid; */
     display:flex;
     flex-direction: column;
-    width:50%;
-    border:1px red solid;
+    padding:1rem;
 }
 
 .team1{
-    align-items: flex-start;
+    width:48%;
+    align-items: flex-end;
+}
+
+.stats-middle {
+    width:14%;
 }
 
 .team2 {
-    align-items: flex-end;
+    width:48%;
+    align-items: flex-start;
 }
+
+
+@media(max-width:1600px) {
+    .matches-grid {
+        grid-template-columns: 1fr 1fr;
+        margin:4%;
+    }
+    .match-bg {
+        margin:2%;
+    }
+}
+@media(max-width:1200px) {
+    .matches-grid {
+        margin:0 auto;
+        padding:0;
+    }
+}
+
+@media(max-width:900px) {
+    .matches-grid {
+        grid-template-columns: 1fr;
+        margin:0 auto;
+        padding:0;
+    }
+}
+

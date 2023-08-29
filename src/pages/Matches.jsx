@@ -15,11 +15,13 @@ for(let i = 0; i < replay_file_data.length; i += 2) {
 
 export default function Matches() {
     return(
-        replays.map((replay,index) => {
+        <div className="matches-grid">
+        {replays.map((replay,index) => {
             return(
                 <Match winner={replay[0]} loser={replay[1]} key={index}/>
             )
-        })
+        })}
+        </div>
     )
 }
 
@@ -30,30 +32,37 @@ function Match(props) {
         <div className="match-bg">
             <table className="match-info">
                 <span className="general-stats">
-                    <h2>Regular Season - Week (insert number)</h2>
-                    <h2>{winner.map} - {winner.date}</h2>
+                    <h4>Regular Season - Week 1</h4>
+                    <h4>-</h4>
+                    <h4>{winner.map} - {winner.date}</h4>
                 </span>
-                <p>{winner.goals} - {loser.goals}</p>
                 <tr className="teams-presentation">
                     <td className="team1">
-                        <h2>{winner['team name']}</h2>
-                        <span>Team Logo</span>
-                        <span>Score: {winner.score}</span>
-                        <span>Goals: {winner.goals}</span>
-                        <span>Assists: {winner.assists}</span>
-                        <span>Saves: {winner.saves}</span>
-                        <span>Shots:{winner.shots}</span>
-                        <span>Shot %: {winner.shooting_percentage}</span>
+                        <h3>{winner.goals}</h3>
+                        <h3>{winner['team name']}</h3>
+                        <span>{winner.score}</span>
+                        <span>{winner.goals}</span>
+                        <span>{winner.assists}</span>
+                        <span>{winner.saves}</span>
+                        <span>{winner.shots}</span>
+                    </td>
+                    <td className="stats-middle">
+                        <h3>-</h3>
+                        <h3>-</h3>
+                        <span>Score</span>
+                        <span>Goals</span>
+                        <span>Assists</span>
+                        <span>Saves</span>
+                        <span>Shots</span>
                     </td>
                     <td className="team2">
-                        <h2>{loser['team name']}</h2>
-                        <span>Team Logo</span>
-                        <span>Score: {loser.score}</span>
-                        <span>Goals: {loser.goals}</span>
-                        <span>Assists: {loser.assists}</span>
-                        <span>Saves: {loser.saves}</span>
-                        <span>Shots:{loser.shots}</span>
-                        <span>Shot %: {loser.shooting_percentage}</span>
+                        <h3>{loser.goals}</h3>
+                        <h3>{loser['team name']}</h3>
+                        <span>{loser.score}</span>
+                        <span>{loser.goals}</span>
+                        <span>{loser.assists}</span>
+                        <span>{loser.saves}</span>
+                        <span>{loser.shots}</span>
                     </td>
                 </tr>
             </table>

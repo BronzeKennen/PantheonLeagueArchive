@@ -4,13 +4,14 @@
     background: rgba(0, 0, 0, 0.6);
     color:white;
     justify-content: space-between;
+    width: 100vw;
 }
 
-  
+
 .NavBar ul {
     list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: row;
 }
@@ -19,11 +20,11 @@
     padding: 0 1em;
 }
 
-  
+
 .rest {
     color: white;
 }
-  
+
 .NavBar a:hover {
     color: beige;
 }
@@ -49,17 +50,33 @@
     width:45px;
 }
 
-@media(max-width:480px) {
-    .NavBar ul {
-        display:flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+@media(max-width:620px) {
     .NavBar {
         display:flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
+    .NavBar ul {
+        display:flex;
+        flex-direction: column;
+        padding-inline-start: 0;
+    }
+    .NavBar li {
+        padding: 0;
+        margin:0;
+    }
+}
+
+@media(max-width:720px) {
+
+}
+
+
+@media(max-width:1200px) {
+    
+}
+
+@media(max-width:1600px) {
+
 }

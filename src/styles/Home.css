@@ -47,6 +47,7 @@
 }
 
 .subheader {
+    width:80%;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -122,7 +123,8 @@
 
 @media (max-width: 480px) {
     .rllogo {
-        background: url('/rlogo.png');
+        margin-top:60%;
+        background: url('./LOGO_BLK.png');
         width:100%;
         min-height:200px;
         max-width:200px;
@@ -212,6 +214,9 @@
     .header {
         opacity:0%;
         margin-top:-15%;
+        position:absolute;
+        opacity:0%;
+    
     }
 
     .header-button {
