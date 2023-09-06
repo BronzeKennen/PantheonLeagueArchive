@@ -17,7 +17,17 @@ for(let i = 0; i < replay_file_data.length; i += 2) {
 
 export default function Matches() {
     const [week,setWeek] = useState(0);
-    let weeks = [1,2,3,4,5,6,7];
+    let week_set = new Set();
+    replays.map((replay,index) => {
+        if(replay[0].week != null) {
+            console.log(replay[0].week);
+            console.log(replay[1].week);
+            week_set.add(replay[0].week);
+            week_set.add(replay[1].week);
+        }
+    })
+
+    const weeks = [...week_set];
     return(
         <>
             <h1>Choose Week</h1>
@@ -37,7 +47,7 @@ export default function Matches() {
 
 function Match(props) {
     const {winner, loser, week} = props;
-    if(week > 0) {
+    if(week === winner.week) {
     return(
         <div className="match-bg">
             <table className="match-info">
