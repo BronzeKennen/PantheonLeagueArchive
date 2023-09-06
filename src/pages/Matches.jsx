@@ -1,3 +1,4 @@
+import { useState } from "react"
 import "../styles/Matches.css"
 import { createClient } from '@supabase/supabase-js'
 
@@ -13,21 +14,30 @@ for(let i = 0; i < replay_file_data.length; i += 2) {
     replays.push([replay_file_data[i],replay_file_data[i+1]]);
 }
 
+
 export default function Matches() {
+    const [week,setWeek] = useState(0);
+    let weeks = [1,2,3,4,5,6,7];
     return(
-        <div className="matches-grid">
-        {replays.map((replay,index) => {
-            return(
-                <Match winner={replay[0]} loser={replay[1]} key={index}/>
-            )
-        })}
-        </div>
+        <>
+            <h1>Choose Week</h1>
+            {weeks.map((week) => {
+                return(<button className="week-button" onClick={() => {setWeek(week)}}>{week}</button>)
+            })}
+            <div className="matches-grid">
+            {replays.map((replay,index) => {
+                return(
+                    <Match winner={replay[0]} loser={replay[1]} week={week} key={index}/>
+                )
+            })}
+            </div>
+        </>
     )
 }
 
 function Match(props) {
-    const {winner, loser} = props;
-    console.log(winner);
+    const {winner, loser, week} = props;
+    if(week > 0) {
     return(
         <div className="match-bg">
             <table className="match-info">
@@ -68,6 +78,7 @@ function Match(props) {
             </table>
         </div>
     )
+    }
 }
 
 

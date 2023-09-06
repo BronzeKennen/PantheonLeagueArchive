@@ -73,3 +73,13 @@
     }
 }
 
+.week-button {
+    width:200px;
+    height:150px;
+    background-color:rgb(58, 56, 56);
+}
+
+.week-button:hover {
+    background-color:black;
+
+}
